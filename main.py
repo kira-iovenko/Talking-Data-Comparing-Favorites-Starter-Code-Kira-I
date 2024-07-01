@@ -71,13 +71,13 @@ input("Press enter to see data visualizations.\n")
 
 #Part 6 Create graphs
 #Create histogram
-
+plt.hist(comedyMovieData['audience_rating'], range = (0, 100), bins = 20)
 
 #Adds labels and adjusts histogram
 plt.grid(True)
-plt.title("")
-plt.xlabel("")
-plt.ylabel("")
+plt.title("Audience Ratings of Comedy Movies Histogram")
+plt.xlabel("Audience Ratings")
+plt.ylabel("Number of Comedy Movies")
 
 #Prints interpretation of histogram
 print(

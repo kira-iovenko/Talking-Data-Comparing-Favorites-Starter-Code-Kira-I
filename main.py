@@ -57,14 +57,14 @@ print(favMovie + " is rated 7 points lower than the highest rated movie.")
 print()
 
 #find mean
-mean = 0
+mean = comedyMovieData['audience_rating'].mean()
 print("The mean audience rating of the data set is: " + str(mean))
-print(favMovie + " [is higher than/lower than/the same as] the mean movie rating.")
+print(favMovie + " [is higher than the mean movie rating.")
 
 #find median
-median = 0
+median = comedyMovieData['audience_rating'].median()
 print("The median audience rating of the data set is: " + str(median))
-print(favMovie + " [is higher than/lower than/the same as] the median movie rating.")
+print(favMovie + " [is higher than the median movie rating.")
 
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 input("Press enter to see data visualizations.\n")

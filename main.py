@@ -71,7 +71,7 @@ input("Press enter to see data visualizations.\n")
 
 #Part 6 Create graphs
 #Create histogram
-plt.hist(comedyMovieData['audience_rating'], range = (0, 100), bins = 20)
+plt.hist(comedyMovieData['audience_rating'], range = (0,100), bins = 20)
 
 #Adds labels and adjusts histogram
 plt.grid(True)
@@ -81,7 +81,7 @@ plt.ylabel("Number of Comedy Movies")
 
 #Prints interpretation of histogram
 print(
-  "According to the histogram, ..."
+  "According to the histogram, most movies are found at around the 75% rating."
 )
 print("Close the graph by pressing the 'X' in the top right corner.")
 print()
@@ -90,19 +90,19 @@ print()
 plt.show()
 
 #Create scatterplot
-
+plt.scatter(data = comedyMovieData, x = 'audience_rating', y = 'critic_rating')
 
 #Adds labels and adjusts scatterplot
 plt.grid(True)
-plt.title("")
-plt.xlabel("")
-plt.ylabel("")
+plt.title("Audience Rating versus Critic Rating")
+plt.xlabel("Audience Rating")
+plt.ylabel("Critic Rating")
 plt.xlim(0, 100)
 plt.ylim(0, 100)
 
 #Prints interpretation of scatterplot
 print(
-  "According to the scatter plot, ..."
+  "According to the scatter plot, as the Audience Rating increases, the Critic Rating increases."
 )
 print()
 

@@ -14,15 +14,16 @@ print('My favorite movie is '+favMovie)
 
 
 #Part 3 Investigate the data
-
-
+#print(movieData.head())
+#print(movieData['movie_title'])
 
 #Part 4 Filter data
 print("\nThe data for my favorite movie is:\n")
 #Create a new variable to store your favorite movie information
-
-
-
+favMovieBooleanList = movieData['movie_title'] == favMovie
+#print(favMovieBooleanList)
+favMovieData = movieData.loc[favMovieBooleanList]
+print(favMovieData)
 
 
 print("\n\n")

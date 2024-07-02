@@ -29,15 +29,15 @@ print(favMovieData)
 print("\n\n")
 
 #Create a new variable to store a new data set with a certain genre
-comedyMovieBooleanList = movieData['genres'].str.contains('Comedy')
-comedyMovieData = movieData.loc[comedyMovieBooleanList]
+dramaMovieBooleanList = movieData['genres'].str.contains('Drama')
+dramaMovieData = movieData.loc[dramaMovieBooleanList]
 
 
-numOfMovies = comedyMovieData.shape[0]
+numOfMovies = dramaMovieData.shape[0]
 
 print("We will be comparing " + favMovie +
-      " to other movies under the genre Comedy in the data set.\n")
-print("There are " + str(numOfMovies) + " movies under the category Comedy.")
+      " to other movies under the genre Drama in the data set.\n")
+print("There are " + str(numOfMovies) + " movies under the category Drama.")
 
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 input("Press enter to see more information about how " + favMovie +
@@ -45,24 +45,24 @@ input("Press enter to see more information about how " + favMovie +
 
 #Part 5 Describe data
 #min
-min = comedyMovieData['audience_rating'].min()
+min = dramaMovieData['audience_rating'].min()
 print("The min audience rating of the data set is: " + str(min))
-print(favMovie + " is rated 93 points higher than the lowest rated movie.")
+print(favMovie + " is rated 89 points higher than the lowest rated movie.")
 print()
 
 #find max
-max = comedyMovieData['audience_rating'].max()
+max = dramaMovieData['audience_rating'].max()
 print("The max audience rating of the data set is: " + str(max))
 print(favMovie + " is rated 7 points lower than the highest rated movie.")
 print()
 
 #find mean
-mean = comedyMovieData['audience_rating'].mean()
+mean = dramaMovieData['audience_rating'].mean()
 print("The mean audience rating of the data set is: " + str(mean))
 print(favMovie + " is higher than the mean movie rating.")
 
 #find median
-median = comedyMovieData['audience_rating'].median()
+median = dramaMovieData['audience_rating'].median()
 print("The median audience rating of the data set is: " + str(median))
 print(favMovie + " is higher than the median movie rating.")
 
@@ -71,17 +71,17 @@ input("Press enter to see data visualizations.\n")
 
 #Part 6 Create graphs
 #Create histogram
-plt.hist(comedyMovieData['audience_rating'], range = (0,100), bins = 20)
+plt.hist(dramaMovieData['audience_rating'], range = (0,100), bins = 20)
 
 #Adds labels and adjusts histogram
 plt.grid(True)
-plt.title("Audience Ratings of Comedy Movies Histogram")
+plt.title("Audience Ratings of Drama Movies Histogram")
 plt.xlabel("Audience Ratings")
-plt.ylabel("Number of Comedy Movies")
+plt.ylabel("Number of Drama Movies")
 
 #Prints interpretation of histogram
 print(
-  "According to the histogram, most movies are found at around the 75% rating."
+  "According to the histogram, most movies are found from the 75% to 80% rating."
 )
 print("Close the graph by pressing the 'X' in the top right corner.")
 print()
@@ -90,7 +90,7 @@ print()
 plt.show()
 
 #Create scatterplot
-plt.scatter(data = comedyMovieData, x = 'audience_rating', y = 'critic_rating', label = 'Comedy Movies')
+plt.scatter(data = dramaMovieData, x = 'audience_rating', y = 'critic_rating', label = 'Drama Movies')
 
 #Adds labels and adjusts scatterplot
 plt.grid(True)

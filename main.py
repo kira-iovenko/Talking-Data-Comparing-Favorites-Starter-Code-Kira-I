@@ -59,12 +59,12 @@ print()
 #find mean
 mean = comedyMovieData['audience_rating'].mean()
 print("The mean audience rating of the data set is: " + str(mean))
-print(favMovie + " [is higher than the mean movie rating.")
+print(favMovie + " is higher than the mean movie rating.")
 
 #find median
 median = comedyMovieData['audience_rating'].median()
 print("The median audience rating of the data set is: " + str(median))
-print(favMovie + " [is higher than the median movie rating.")
+print(favMovie + " is higher than the median movie rating.")
 
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 input("Press enter to see data visualizations.\n")
@@ -90,7 +90,7 @@ print()
 plt.show()
 
 #Create scatterplot
-plt.scatter(data = comedyMovieData, x = 'audience_rating', y = 'critic_rating')
+plt.scatter(data = comedyMovieData, x = 'audience_rating', y = 'critic_rating', label = 'Comedy Movies')
 
 #Adds labels and adjusts scatterplot
 plt.grid(True)
@@ -99,6 +99,18 @@ plt.xlabel("Audience Rating")
 plt.ylabel("Critic Rating")
 plt.xlim(0, 100)
 plt.ylim(0, 100)
+
+#Plots my favorite movie
+plt.scatter(data = favMovieData, x = 'audience_rating', y = 'critic_rating', label = favMovie)
+
+plt.legend()
+
+print(
+  "According to the scatter plot, " + favMovie + " follows the scatter plot's overall pattern, however Audience Rating is higher than Critic Rating."
+)
+print()
+
+
 
 #Prints interpretation of scatterplot
 print(
